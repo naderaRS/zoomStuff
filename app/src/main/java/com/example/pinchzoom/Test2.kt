@@ -11,16 +11,16 @@ import androidx.activity.ComponentActivity
 
 
 class Test2 : ComponentActivity() {
-    var textMsg: TextView? = null
+
     var myImage: ImageView? = null
     private var scaleGestureDetector: ScaleGestureDetector? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textMsg = findViewById<View>(R.id.msg) as TextView
+
         myImage = findViewById<View>(R.id.myimage) as ImageView
         scaleGestureDetector = ScaleGestureDetector(
-            this, MySimpleOnScaleGestureListener(textMsg, myImage)
+            this, MySimpleOnScaleGestureListener(myImage)
         )
     }
 
@@ -31,7 +31,7 @@ class Test2 : ComponentActivity() {
     }
 
     private inner class MySimpleOnScaleGestureListener(
-        var viewMessage: TextView?,
+
         var viewMyImage: ImageView?
     ) :
         SimpleOnScaleGestureListener() {
@@ -45,10 +45,8 @@ class Test2 : ComponentActivity() {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
             val scaleFactor = detector.scaleFactor - 1
             factor += scaleFactor
-            viewMessage!!.text = """
-                $scaleFactor
-                $factor
-                """.trimIndent()
+
+
             viewMyImage!!.scaleX = factor
             viewMyImage!!.scaleY = factor
             return true
