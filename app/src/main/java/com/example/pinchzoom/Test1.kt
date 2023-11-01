@@ -1,4 +1,6 @@
 package com.example.pinchzoom
+
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
@@ -7,8 +9,9 @@ import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import android.widget.ImageView
 import androidx.activity.ComponentActivity
 import com.bumptech.glide.Glide
+import java.net.URL
 
-class Test2 : ComponentActivity() {
+class Test1 : ComponentActivity() {
     private var scaleGestureDetector: ScaleGestureDetector? = null
     private var imageView: ImageView? = null
     private var scale = 1.0f
@@ -21,9 +24,18 @@ class Test2 : ComponentActivity() {
         setContentView(R.layout.activity_drag)
         imageView = findViewById(R.id.imageView)
         scaleGestureDetector = ScaleGestureDetector(this, ScaleListener())
-        val url =
-            "https://d3gh927sycat3x.cloudfront.net/tenants/4/productimages/P2TR-BKXX-100XX/1638211471_64363_1image1_1.jpg"
-        Glide.with(this).load(url).into(imageView!!)
+       // val url =
+            "https://d3gh927sycat3x.cloudfront.net/tenants/4/productimages/P2IN-BKXX-035XX/1611615309_6668_01_1.jpg@Thumbnail"
+      //  Glide.with(this).load(url).into(imageView!!)
+
+        val url = URL("http://image10.bizrate-images.com/resize?sq=60&uid=2216744464")
+        val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+        // val url = "https://d3gh927sycat3x.cloudfront.net/tenants/4/productimages/P2IN-BKXX-035XX/1611615309_6668_01_1.jpg@Thumbnail"
+
+        imageView!!.setImageBitmap(bmp);
+
+
+
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
