@@ -22,7 +22,7 @@ class Test2 : ComponentActivity() {
         imageView = findViewById(R.id.imageView)
         scaleGestureDetector = ScaleGestureDetector(this, ScaleListener())
         val url =
-            "https://d3gh927sycat3x.cloudfront.net/tenants/4/productimages/P2TR-BKXX-100XX/1638211471_64363_1image1_1.jpg"
+            "https://www.thevillagetrip.com/festival/wp-content/uploads/2023/08/Fred-Johnson.jpg"
         Glide.with(this).load(url).into(imageView!!)
     }
 

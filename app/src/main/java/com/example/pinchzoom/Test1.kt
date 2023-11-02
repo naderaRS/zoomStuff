@@ -28,7 +28,7 @@ class Test1 : ComponentActivity() {
             "https://d3gh927sycat3x.cloudfront.net/tenants/4/productimages/P2IN-BKXX-035XX/1611615309_6668_01_1.jpg@Thumbnail"
       //  Glide.with(this).load(url).into(imageView!!)
 
-        val url = URL("http://image10.bizrate-images.com/resize?sq=60&uid=2216744464")
+        val url = URL("https://en.wikipedia.org/wiki/Fred_Johnson_%28offensive_lineman%29#/media/File:Fred_Johnson_(offensive_lineman).jpg")
         val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
         // val url = "https://d3gh927sycat3x.cloudfront.net/tenants/4/productimages/P2IN-BKXX-035XX/1611615309_6668_01_1.jpg@Thumbnail"
 
