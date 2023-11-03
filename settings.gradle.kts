@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PinchZoom"
 include(":app")
+include(":zoomage")
